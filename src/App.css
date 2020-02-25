@@ -4,12 +4,38 @@
   font-family: Helvetica, sans-serif;
 }
 .nav {
-  height: 100px;
+  height: 6vh;
   background-color: black;
   color: white;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding-left: 3%;
+}
+nav a {
+  text-decoration: none;
+  color: white;
 }
 .main {
   display: flex;
   align-content: center;
+  overflow-y: scroll;
+  margin: 50px 0;
+  height: 80vh;
+}
+
+.footer {
+  height: 14vh;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+.footer-text {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
