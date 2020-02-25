@@ -7,15 +7,24 @@ import Tile from "./Tile";
 import ParksList from "./data/parks.json";
 import Logo from "./NPSlogo.svg";
 
-// let APIurl =
-//   "https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=FB8xUd8hgyVbthrLauwMwGCF3llE4GP7mWmJ7fL7";
+let APIurl =
+  "https://developer.nps.gov/api/v1/parks?&api_key=FB8xUd8hgyVbthrLauwMwGCF3llE4GP7mWmJ7fL7";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ""
+      info: []
     };
+  }
+  componentDidMount() {
+    fetch(APIurl)
+      .then(res => {
+        return res.json();
+      })
+      .then(data => {
+        this.setState({ info: data });
+      });
   }
 
   render() {
@@ -29,12 +38,14 @@ class App extends Component {
         <main className="main">
           <Route
             path="/"
-            render={routerProps => <Home data={ParksList} />}
+            render={routerProps => <Home data={this.state.info.data} />}
             exact
           />
           <Route
             path="/park/:id"
-            render={routerProps => <Park data={ParksList} {...routerProps} />}
+            render={routerProps => (
+              <Park data={this.state.info.data} {...routerProps} />
+            )}
           />
         </main>
         <footer className="footer">
