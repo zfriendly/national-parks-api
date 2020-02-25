@@ -34,7 +34,7 @@ class App extends Component {
           />
           <Route
             path="/park/:id"
-            render={routerProps => <Park {...routerProps} />}
+            render={routerProps => <Park data={ParksList} {...routerProps} />}
           />
         </main>
         <footer className="footer">
