@@ -8,7 +8,7 @@ import ParksList from "./data/parks.json";
 import Logo from "./NPSlogo.svg";
 
 let APIurl =
-  "https://developer.nps.gov/api/v1/parks?&api_key=FB8xUd8hgyVbthrLauwMwGCF3llE4GP7mWmJ7fL7";
+  "https://developer.nps.gov/api/v1/parks?limit=50&fields=images,addresses&api_key=FB8xUd8hgyVbthrLauwMwGCF3llE4GP7mWmJ7fL7";
 
 class App extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
-        this.setState({ info: data });
+        this.setState({ info: data.data });
       });
   }
 
@@ -38,13 +38,13 @@ class App extends Component {
         <main className="main">
           <Route
             path="/"
-            render={routerProps => <Home data={this.state.info.data} />}
+            render={routerProps => <Home data={this.state.info} />}
             exact
           />
           <Route
             path="/park/:id"
             render={routerProps => (
-              <Park data={this.state.info.data} {...routerProps} />
+              <Park data={this.state.info} {...routerProps} />
             )}
           />
         </main>
