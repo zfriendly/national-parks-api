@@ -29,8 +29,12 @@ const Park = props => {
           <h3>Directions</h3>
           <p>{parkData[0].directionsInfo}</p>
         </div>
-        <a href={parkData[0].directionsUrl} target="_blank">
-          <div>Read More</div>
+        <a
+          href={parkData[0].directionsUrl}
+          target="_blank"
+          className="park__link"
+        >
+          <div className="park__button">Read More</div>
         </a>
         <div className="park__images">
           <h3>Images</h3>
@@ -49,7 +53,7 @@ const Park = props => {
           </div>
         </div>
         <Link to="/">
-          <h3>Back to Park List</h3>
+          <h4 className="park__home-link">Back to Park List</h4>
         </Link>
       </div>
     </div>

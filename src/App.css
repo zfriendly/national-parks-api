@@ -4,7 +4,7 @@
   font-family: Helvetica, sans-serif;
 }
 .nav {
-  height: 6vh;
+  height: 8vh;
   background-color: black;
   color: white;
   text-decoration: none;
@@ -20,12 +20,12 @@ nav a {
   display: flex;
   align-content: center;
   overflow-y: scroll;
-  margin: 50px 0;
   height: 80vh;
+  margin-bottom: 10px;
 }
 
 .footer {
-  height: 14vh;
+  height: 12vh;
   background-color: black;
   display: flex;
   flex-direction: row;
