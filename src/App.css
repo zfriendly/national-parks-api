@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+}
+.nav {
+  height: 100px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+}
+.main {
+  display: flex;
+  align-content: center;
+}
