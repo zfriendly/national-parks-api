@@ -53,7 +53,7 @@ class App extends Component {
             <h3 className="nps">National Park Service</h3>
             <h2 className="interior">U.S. Department of the Interior</h2>
           </div>
-          <img src={Logo}></img>
+          <img src={Logo} />
         </footer>
       </div>
     );
